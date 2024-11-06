@@ -1,0 +1,982 @@
+/* --------- main --------- */
+
+main {
+    /* width: calc(100% - 26rem); */
+    width: 1120px;
+    margin: 4.2rem 4rem 0 22rem;
+    /* position:fixed; */
+    position:absolute;
+    transition: all 300ms ease;
+    min-width: 20rem;
+    font-size: 0.95em;
+    border: 1px solid transparent;
+}
+
+main .page-title {
+    color: var(--mc-text-title);
+    margin-bottom: 0.5rem;
+    margin-left: 0.5rem;
+    line-height: 3rem;
+    max-width: 63.5rem;
+    transition: all 600ms ease;
+
+}
+main .content {
+    font-size: var(--mc-text-size);
+    box-shadow: var(--box-shadow);
+    padding-top: 3rem;
+    padding: 3rem;
+    margin-bottom: 3rem;
+    background: var(--mc-box-background);
+    border-radius: var(--border-radius);
+    color: var(--mc-text);
+    overflow: hidden;
+    /* width: min-content; */
+    max-width: 1467px;                   /*<-------- width */
+    min-width: 20rem;   
+}
+
+main .content .anchor {
+    display: block;
+    position: relative;
+    top: -4rem;
+    visibility: hidden;
+}
+
+main .content > * {
+    /* max-width: 90%; */
+    /* font-size: clamp(1rem, 19cqi, 3rem); */
+    
+    word-wrap: break-word;
+    white-space: pre-wrap;
+
+    /* margin: 0 auto; */
+}
+
+/* main .content > img {
+    width: 200px;
+    max-width: 90%;
+    margin: 0 auto;
+    max-width: 50%;
+    max-height: 500%;
+} */
+
+/* main .block {
+    padding: 0.4em 0;
+}
+
+main .block a {
+    text-decoration: underline;
+    color: var(--mc-text-link)
+}
+
+main .block b{
+    color: var(--mc-text-bold);
+}
+
+main .block .cdx-marker {
+    background: var(--mc-text-highlight-background);
+    color: var(--mc-text);
+    padding: 3px 0;
+}
+
+main .block .inline-code {
+    background: rgba(250, 239, 240, 0.78);
+    color: #b44437;
+    padding: 3px 4px;
+    border-radius: 5px;
+    margin: 0 1px;
+    font-family: inherit;
+    font-size: 0.9em;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+main .pre {
+	white-space: pre-wrap;
+	background: var(--mc-code-background);
+	border-left: 3px solid var(--mc-code-border);
+    border-radius: var(--border-radius);
+	color: var(--mc-code-text);
+	page-break-inside: avoid;
+	font-family: monospace;
+	font-size: 1em;
+	line-height: 1.6;
+	max-width: calc(90% - 3em);
+	padding: 1em 1.5em;
+	display: block;
+	word-wrap: break-word;
+    margin: 1.2em auto;
+}
+
+main .header {
+    padding: 0.6em 0 0.2em;
+    color: var(--mc-text-header)
+}
+
+main .paragraph {
+    line-height: 1.6em;
+    color: var(--mc-text);
+}
+
+main .list {
+    padding-left: 2.5em;
+    max-width: calc(90% - 2.5em);
+}
+
+main .list-item {
+    padding: 0.35em 0 0.35em 0.2em;
+    line-height: 1.6em;
+}
+
+main .checklist-item {
+    display: flex;
+}
+
+main .checklist-item .checklist-box {
+    display: inline-block;
+    flex-shrink: 0;
+    position: relative;
+    width: 1em;
+    height: 1em;
+    margin:  0.35em;
+    margin-left: 0;
+    margin-right: 7px;
+    border-radius: 50%;
+    border: 1px solid var(--mc-not-checked-border);
+    background: var(--mc-not-checked-background);
+    user-select: auto;
+}
+
+main .checklist-item .checklist-text {
+    padding: 0.35em 0;
+}
+
+
+main .checklist-item.checked .checklist-box {
+    background: var(--mc-checked-background);
+    border-color: var(--mc-checked-background);
+}
+
+main .checklist-item.checked .checklist-box::after {
+    position: absolute;
+    top: 0.3em !important;
+    left: 0.2em !important;
+    width: 0.45em !important;
+    height: 0.2em !important;
+    border-left: 0.16em solid var(--mc-checked-foreground) !important;
+    border-bottom: 0.16em solid var(--mc-checked-foreground) !important;
+    border-top: none;
+    border-right: none;
+    background: transparent;
+    content: '';
+    transform: rotate(-45deg);
+}
+
+main .table{
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed;
+    margin: 1em auto;
+}
+
+main .table tr {
+    background-color: var(--mc-table-row-background);
+    color: var(--mc-table-row-text);
+}
+
+main .table tr:nth-child(even) {
+    background-color: var(--mc-table-alternate-background) !important;
+    color: var(--mc-table-alternate-text) !important;
+}
+
+main .table td, main .table th {
+    border: 1px solid var(--mc-table-border);
+    overflow-wrap: anywhere;
+}
+
+main .table th {
+    font-weight: var(--mc-table-header-weight);
+    background-color: var(--mc-table-header-background);
+    color: var(--mc-table-header-text);
+}
+
+
+main .delimiter {
+    line-height: 2.2em;
+    width: 100%;
+    text-align: center;
+}
+
+main .delimiter:before {
+    display: inline-block;
+    content: "***";
+    font-size: 2em;
+    line-height: 2.2em;
+    height: 2em;
+    letter-spacing: 0.2em;
+    color: var(--mc-primary-variant);
+}
+
+
+main .tip {
+    background-color: var(--mc-tip-background);
+    color: var(--mc-tip-text) !important;
+    padding: 1em 1.5em 1.5rem 1.5rem;
+    max-width: calc(90% - 3em);
+    border-radius: var(--border-radius);
+    margin: 1.2em auto;
+    border-left: 3px solid var(--mc-tip-left);
+}
+
+main .tip div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+main .tip div svg {
+    margin-right: 0.5rem;
+    margin-top: -0.25rem;
+    width: 1.25rem;
+    height: 1.25rem;
+}
+main .tip div h3 {
+    font-size: 1.1em;
+    line-height: 1.75em;
+    font-weight: 400;
+}
+main .tip p {
+    color: var(--mc-tip-text) !important;
+    font-weight: 300;
+    
+}
+
+
+main .warning {
+   background-color: var(--mc-warning-background);
+   color: var(--mc-warning-text) !important;
+   padding: 1em 1.5em 1.5rem 1.5rem;
+   max-width: calc(90% - 3em);
+   border-radius: var(--border-radius);
+   margin: 1.2em auto;
+   border-left: 3px solid var(--mc-warning-left);
+}
+
+main .warning div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+main .warning div svg {
+    margin-right: 0.5rem;
+    width: 1.25rem;
+    height: 1.25rem;
+}
+main .warning div h3 {
+    font-size: 1.1em;
+    line-height: 1.75em;
+    font-weight: 400;
+}
+main .warning p {
+    color: var(--mc-warning-text) !important;
+    font-weight: 300;
+}
+
+main blockquote {
+	margin: 1rem auto !important;
+	padding: 0;
+	position: relative;
+    max-width:71% !important;
+	font-size: 0.9em;
+	line-height: 1.4em;
+}
+
+main blockquote p:first-of-type:before {
+	content: '\201c';
+	position: absolute;
+	margin-left: -.5em;
+}
+
+main blockquote p:last-of-type:after {
+	content: '\201d';
+	position: absolute;
+}
+
+main blockquote cite {
+	position: relative;
+}
+
+main blockquote cite:before {
+	content: '–';
+	position: absolute;
+	left: -.6em;
+}
+
+main .fig-img.img-border {
+    border: 1px solid var(--mc-box-border);
+    padding: 1px;
+}
+
+main .fig-img.img-bg  {
+    background: var(--mc-background);
+}
+
+main .fig-img .img-bg  {
+    display: block;
+    max-width: 60% !important;
+    margin: 0 auto;
+}
+
+main .fig-img .img-fullwidth  {
+    width: 100%;
+}
+
+main .fig-img .img  {
+    max-width: 100%;
+} */
+
+/* -----------------------demo (demo.css)------------------------------- */
+/* ---- Customizations to the color grid palettes (font and background color) ------------------------------------------------------ */
+.ck-editor__editable[role="textbox"] {
+  /* editing area */
+  min-height: 900px;
+}
+.ck-content .image {
+  /* block images */
+  max-width: 80%;
+  margin: 20px auto;
+}
+
+.ck.ck-color-ui-dropdown {
+  --ck-color-grid-tile-size: 20px;
+}
+.ck.ck-color-ui-dropdown .ck-color-grid {
+  grid-gap: 1px;
+}
+.ck.ck-color-ui-dropdown .ck-color-grid .ck-button {
+  border-radius: 0;
+}
+.ck.ck-color-ui-dropdown .ck-color-grid__tile:hover:not(.ck-disabled),
+.ck.ck-color-ui-dropdown .ck-color-grid__tile:focus:not(.ck-disabled) {
+  z-index: 1;
+  transform: scale(1.3);
+}
+
+/* ---- Mention list styles --------------------------------------------------------------- */
+.ck-mentions .mention__item {
+  display: flex;
+  align-items: center;
+}
+.ck-mentions .mention__item img {
+  border-radius: 100%;
+  height: 30px;
+}
+.ck-mentions .mention__item span {
+  margin-left: 0.5em;
+}
+.ck-mentions .mention__item.ck-on span {
+  color: var(--ck-color-base-background);
+}
+.ck-mentions .mention__item .mention__item__full-name {
+  color: hsl(0deg, 0%, 45%);
+}
+.ck-mentions .mention__item:hover:not(.ck-on) .mention__item__full-name {
+  color: hsl(0deg, 0%, 40%);
+}
+
+/* ---- Basic CSS reset ------------------------------------------------------ */
+*, ::after, ::before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+.ck.ck-content.ck-editor__editable_inline > :first-child {
+  margin-top: 0;
+}
+
+/* ---- Styles of the demo page ------------------------------------------------------ */
+.editor5 {
+  max-width: 100rem;
+  margin: 0 auto 2rem auto;
+}
+
+
+/* ---- Styles specific to the feature rich demo ------------------------------------------------------ */
+.ck.ck-word-count {
+  display: flex;
+  justify-content: flex-end;
+  background: var(--ck-color-toolbar-background);
+  padding: var(--ck-spacing-small) var(--ck-spacing-standard);
+  border: 1px solid var(--ck-color-toolbar-border);
+  border-top-width: 0;
+  border-radius: 0 0 var(--ck-border-radius);
+  font: normal normal normal var(--ck-font-size-base)/var(--ck-line-height-base) var(--ck-font-face);
+}
+
+.ck.ck-word-count .ck-word-count__words {
+  margin-right: var(--ck-spacing-standard);
+}
+
+.ck.ck-rounded-corners .ck.ck-editor__main > .ck-editor__editable,
+.ck.ck-rounded-corners .ck-source-editing-area textarea {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+/* -----------------------Content(content.css)------------------------------- */
+
+/* ---- Cross-editor content styles. --------------------------------------------------------------- */
+main .ck-content:not(.ck-style-grid__button__preview) {
+    /* Make sure all content containers have some min height to make them easier to locate. */
+    min-height: 300px;
+    /* padding: 3rem; */
+    padding: 3rem;
+    padding-top: 3rem;
+  }
+  
+  /* Make sure all content containers are distinguishable on a web page even of not focused. */
+  .ck.ck-content:not(:focus) {
+    border: 1px solid var(--ck-color-base-border);
+  }
+
+/* Font sizes and vertical rhythm for common elements (headings, lists, paragraphs, etc.) */
+main .content h1 {
+  font-size: 2.3em;
+}
+main .content h2 {
+  font-size: 1.84em;
+}
+main .content h3 {
+  font-size: 1.48em;
+}
+main .content h4 {
+  font-size: 1.22em;
+}
+main .content h5 {
+  font-size: 1.06em;
+}
+main .content h6 {
+  font-size: 1em;
+}
+main .content h1,
+main .content h2,
+main .content h3,
+main .content h4,
+main .content h5,
+main .content h6 {
+  line-height: 1.2em;
+  padding-top: 0.8em;
+  margin-bottom: 0.4em;
+}
+main .content blockquote,
+main .content ol,
+main .content p,
+main .content ul {
+  font-size: 1em;
+  line-height: 1.6em;
+  padding-top: 0.2em;
+  margin-bottom: var(--ck-spacing-large);
+}
+
+/* ---- Style feature content styles ------------------------------------------------------ */
+main .content {
+  --ck-georgia-serif-font-stack: Georgia,Times,Times New Roman,serif;
+}
+
+main .content h1.document-title {
+  font-family: var(--ck-georgia-serif-font-stack);
+  font-size: 50px;
+  font-weight: bold;
+  border: 0;
+}
+
+main .content h2.document-subtitle {
+  font-family: var(--ck-georgia-serif-font-stack);
+  font-size: 20px;
+  font-weight: bold;
+  color: #d1d1d1;
+  letter-spacing: 10px;
+}
+
+main .content p.callout {
+  --border-color: #e91e1e;
+  padding: 1.2em 2em;
+  border: 1px solid var(--border-color);
+  border-left: 10px solid var(--border-color);
+  background: #fff9fb;
+  border-radius: 5px;
+  margin: 1.5em 2em;
+  box-shadow: 5px 5px 0 #ffe6ef;
+}
+
+main .content blockquote.side-quote {
+  font-family: var(--ck-georgia-serif-font-stack);
+  font-style: normal;
+  float: right;
+  width: 35%;
+  position: relative;
+  border: 0;
+  overflow: visible;
+  z-index: 1;
+  margin-left: 1em;
+}
+
+main .content blockquote.side-quote::before {
+  content: "“";
+  position: absolute;
+  top: -37px;
+  left: -10px;
+  display: block;
+  font-size: 200px;
+  color: #e7e7e7;
+  z-index: -1;
+  line-height: 1;
+}
+
+main .content blockquote.side-quote p {
+  font-size: 2em;
+  line-height: 1;
+}
+
+main .content blockquote.side-quote p:last-child:not(:first-child) {
+  font-size: 1.3em;
+  text-align: right;
+  color: #555;
+}
+
+main .content span.needs-clarification {
+  outline: 1px dashed #c8a24b;
+  background: #ffe19c;
+  border-radius: 2px;
+  position: relative;
+}
+
+main .content span.needs-clarification::after {
+  content: "?";
+  display: inline-block;
+  color: #fff;
+  background: #3b3b3b;
+  font-size: 12px;
+  vertical-align: super;
+  width: 12px;
+  height: 12px;
+  line-height: 12px;
+  border-radius: 10px;
+  text-align: center;
+  position: absolute;
+  right: -6px;
+  top: -6px;
+  font-weight: bold;
+  letter-spacing: initial;
+}
+
+main .content span.wide-spacing {
+  letter-spacing: 0.3em;
+}
+
+main .content span.small-caps {
+  font-variant: small-caps;
+}
+
+main .content span.spoiler {
+  background: #000;
+  color: #000;
+}
+
+main .content span.spoiler:hover {
+  background: #000;
+  color: #fff;
+}
+
+main .content pre.stylish-code {
+  border-color: transparent;
+  margin-left: 2em;
+  margin-right: 2em;
+  border-radius: 10px;
+}
+
+main .content pre.stylish-code::before {
+  --ck-stylish-code-disc-radius: 6px;
+  content: "";
+  display: block;
+  height: calc(var(--ck-stylish-code-disc-radius) * 2);
+  background-image: radial-gradient(circle, #f16b5d var(--ck-stylish-code-disc-radius), rgba(0, 0, 0, 0) var(--ck-stylish-code-disc-radius)), radial-gradient(circle, #f5be4d var(--ck-stylish-code-disc-radius), rgba(0, 0, 0, 0) var(--ck-stylish-code-disc-radius)), radial-gradient(circle, #56c452 var(--ck-stylish-code-disc-radius), rgba(0, 0, 0, 0) var(--ck-stylish-code-disc-radius));
+  background-size: calc(var(--ck-stylish-code-disc-radius) * 2) calc(var(--ck-stylish-code-disc-radius) * 2);
+  background-position: 0 0, calc(var(--ck-stylish-code-disc-radius) * 3) 0, calc(var(--ck-stylish-code-disc-radius) * 6) 0;
+  margin-bottom: 8px;
+  background-repeat: no-repeat;
+}
+
+main .content pre.stylish-code-dark,
+main .content pre.stylish-code-bright {
+  padding: 1em;
+}
+
+main .content pre.stylish-code-dark {
+  background: #272822;
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.1215686275);
+  color: white;
+}
+
+main .content pre.stylish-code-dark code {
+  color: white;
+}
+
+main .content pre.stylish-code-bright {
+  background: #dddfe0;
+  color: #000;
+  box-shadow: 5px 5px 0 #b3b3b3;
+}
+
+main .content pre.stylish-code-bright code {
+  color: #222;
+}
+
+/* ---------------------Content styler---------------------------- */
+
+/*
+ * CKEditor 5 (v36.0.0) content styles.
+ * Generated on Mon, 06 Feb 2023 10:25:55 GMT.
+ * For more information, check out https://ckeditor.com/docs/ckeditor5/latest/installation/advanced/content-styles.html
+ */
+
+ :root {
+    --ck-color-image-caption-background: hsl(0, 0%, 97%);
+    --ck-color-image-caption-text: hsl(0, 0%, 20%);
+    --ck-color-table-caption-background: hsl(0, 0%, 97%);
+    --ck-color-table-caption-text: hsl(0, 0%, 20%);
+    --ck-image-style-spacing: 1.5em;
+    --ck-inline-image-style-spacing: calc(var(--ck-image-style-spacing) / 2);
+}
+
+/* ckeditor5-font/theme/fontsize.css */
+main .content .text-tiny {
+    font-size: .7em;
+}
+/* ckeditor5-font/theme/fontsize.css */
+main .content .text-small {
+    font-size: .85em;
+}
+/* ckeditor5-font/theme/fontsize.css */
+main .content .text-big {
+    font-size: 1.4em;
+}
+/* ckeditor5-font/theme/fontsize.css */
+main .content .text-huge {
+    font-size: 1.8em;
+}
+/* ckeditor5-image/theme/imagecaption.css */
+main .content .image > figcaption {
+    display: table-caption;
+    caption-side: bottom;
+    word-break: break-word;
+    color: var(--ck-color-image-caption-text);
+    background-color: var(--ck-color-image-caption-background);
+    padding: .6em;
+    font-size: .75em;
+    outline-offset: -1px;
+}
+/* ckeditor5-image/theme/image.css */
+main .content .image {
+    display: table;
+    clear: both;
+    text-align: center;
+    margin: 0.9em auto;
+    min-width: 50px;
+}
+/* ckeditor5-image/theme/image.css */
+main .content .image img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    min-width: 100%;
+}
+/* ckeditor5-image/theme/image.css */
+main .content .image-inline {
+    /*
+     * Normally, the .image-inline would have "display: inline-block" and "img { width: 100% }" (to follow the wrapper while resizing).;
+     * Unfortunately, together with "srcset", it gets automatically stretched up to the width of the editing root.
+     * This strange behavior does not happen with inline-flex.
+     */
+    display: inline-flex;
+    max-width: 100%;
+    align-items: flex-start;
+}
+/* ckeditor5-image/theme/image.css */
+main .content .image-inline picture {
+    display: flex;
+}
+/* ckeditor5-image/theme/image.css */
+main .content .image-inline picture,
+main .content .image-inline img {
+    flex-grow: 1;
+    flex-shrink: 1;
+    max-width: 100%;
+}
+/* ckeditor5-image/theme/imageresize.css */
+main .content .image.image_resized {
+    max-width: 100%;
+    display: block;
+    box-sizing: border-box;
+}
+/* ckeditor5-image/theme/imageresize.css */
+main .content .image.image_resized img {
+    width: 100%;
+}
+/* ckeditor5-image/theme/imageresize.css */
+main .content .image.image_resized > figcaption {
+    display: block;
+}
+/* ckeditor5-image/theme/imagestyle.css */
+main .content .image-style-block-align-left,
+main .content .image-style-block-align-right {
+    max-width: calc(100% - var(--ck-image-style-spacing));
+}
+/* ckeditor5-image/theme/imagestyle.css */
+main .content .image-style-align-left,
+main .content .image-style-align-right {
+    clear: none;
+}
+/* ckeditor5-image/theme/imagestyle.css */
+main .content .image-style-side {
+    float: right;
+    margin-left: var(--ck-image-style-spacing);
+    max-width: 50%;
+}
+/* ckeditor5-image/theme/imagestyle.css */
+main .content .image-style-align-left {
+    float: left;
+    margin-right: var(--ck-image-style-spacing);
+}
+/* ckeditor5-image/theme/imagestyle.css */
+main .content .image-style-align-center {
+    margin-left: auto;
+    margin-right: auto;
+}
+/* ckeditor5-image/theme/imagestyle.css */
+main .content .image-style-align-right {
+    float: right;
+    margin-left: var(--ck-image-style-spacing);
+}
+/* ckeditor5-image/theme/imagestyle.css */
+main .content .image-style-block-align-right {
+    margin-right: 0;
+    margin-left: auto;
+}
+/* ckeditor5-image/theme/imagestyle.css */
+main .content .image-style-block-align-left {
+    margin-left: 0;
+    margin-right: auto;
+}
+/* ckeditor5-image/theme/imagestyle.css */
+main .content p + .image-style-align-left,
+main .content p + .image-style-align-right,
+main .content p + .image-style-side {
+    margin-top: 0;
+}
+/* ckeditor5-image/theme/imagestyle.css */
+main .content .image-inline.image-style-align-left,
+main .content .image-inline.image-style-align-right {
+    margin-top: var(--ck-inline-image-style-spacing);
+    margin-bottom: var(--ck-inline-image-style-spacing);
+}
+/* ckeditor5-image/theme/imagestyle.css */
+main .content .image-inline.image-style-align-left {
+    margin-right: var(--ck-inline-image-style-spacing);
+}
+/* ckeditor5-image/theme/imagestyle.css */
+main .content .image-inline.image-style-align-right {
+    margin-left: var(--ck-inline-image-style-spacing);
+}
+/* ckeditor5-media-embed/theme/mediaembed.css */
+main .content .media {
+    clear: both;
+    margin: 0.9em 0;
+    display: block;
+    min-width: 15em;
+}
+/* ckeditor5-table/theme/tablecaption.css */
+main .content .table > figcaption {
+    display: table-caption;
+    caption-side: top;
+    word-break: break-word;
+    text-align: center;
+    color: var(--ck-color-table-caption-text);
+    background-color: var(--ck-color-table-caption-background);
+    padding: .6em;
+    font-size: .75em;
+    outline-offset: -1px;
+}
+/* ckeditor5-table/theme/tablecolumnresize.css ????????*/
+main .content .table .ck-table-resized {
+    table-layout: fixed;
+}
+/* ckeditor5-table/theme/tablecolumnresize.css */
+main .content .table table {
+    overflow: hidden;
+}
+/* ckeditor5-table/theme/tablecolumnresize.css */
+main .content .table td,
+main .content .table th {
+    position: relative;
+}
+/* ckeditor5-table/theme/table.css */
+main .content .table {
+    margin: 0.9em auto;
+    display: table;
+}
+/* ckeditor5-table/theme/table.css */
+main .content .table table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px double hsl(0, 0%, 70%);
+}
+/* ckeditor5-table/theme/table.css */
+main .content .table table td,
+main .content .table table th {
+    min-width: 2em;
+    padding: .4em;
+    border: 1px solid hsl(0, 0%, 75%);
+}
+/* ckeditor5-table/theme/table.css */
+main .content .table table th {
+    font-weight: bold;
+    background: hsla(0, 0%, 0%, 5%);
+}
+/* ckeditor5-table/theme/table.css */
+main .content[dir="rtl"] .table th {
+    text-align: right;
+}
+/* ckeditor5-table/theme/table.css */
+main .content[dir="ltr"] .table th {
+    text-align: left;
+}
+
+main .content pre {
+    background: hsla(0, 0%, 78%, 0.3);
+    border: 1px solid #c4c4c4;
+    border-radius: 2px;
+    color: #353535;
+    direction: ltr;
+    font-style: normal;
+    min-width: 200px;
+    padding: 1em;
+    tab-size: 4;
+    text-align: left;
+    white-space: pre-wrap;
+}
+
+main .content pre code {
+    background: unset;
+    border-radius: 0;
+    padding: 0;
+}
+
+main .content pre[data-language]:after{
+    background: darkgray;
+    color: white;
+    font-family: -apple-system;
+    font-size: 10px;
+    line-height: 16px;
+    padding: 5px;
+    right: 10px;
+    top: -1px;
+    white-space: nowrap;
+    content: attr(data-language);
+}
+.ck-content .todo-list .todo-list__label>input {
+    -webkit-appearance: none;
+    border: 0;
+    display: inline-block;
+    height: var(--ck-todo-list-checkmark-size);
+    left: -25px;
+    margin-left: 0;
+    margin-right: -15px;
+    position: relative;
+    right: 0;
+    vertical-align: middle;
+    width: var(--ck-todo-list-checkmark-size);
+}
+
+
+
+
+/* @media screen and (min-width: 1900px) {
+    main {
+        zoom:115%;
+    }
+} */
+
+@media screen and (min-width: 1600px) {
+    body {
+        zoom:108%;
+    }
+}
+
+
+
+@media screen and (min-width: 1900px) {
+    body {
+        zoom:100%;
+    }
+}
+
+
+@media screen and (max-width: 1280px) {
+    main {
+        width: calc(100% - 22rem);
+        margin: 4.2rem 2rem 0 20rem;
+    }
+}
+
+@media screen and (max-width: 990px) {
+
+    main {
+        width: calc(100% - 21rem);
+        margin: 4.2rem 1.5rem 0 19.5rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .sticky-header {
+        box-shadow: var(--header-light-shadow);
+    }
+
+    aside {
+        margin-left: -28rem;
+        z-index: 7;
+        display: none;
+        transition: all 600ms ease;
+    }
+
+
+    main {
+        width: calc(100% - 2rem);
+        margin: 4.2rem 1rem 0 1rem;
+    }
+
+    main .page-title {
+        text-align: center;
+    }
+
+    .sticky-header {
+        justify-content: space-around;
+    }
+    .sticky-header h3 {
+        margin-left: 0rem;
+    }
+    .sticky-header #menu-btn {
+        display: inline-block;
+    }
+
+}

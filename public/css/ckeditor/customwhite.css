@@ -1,0 +1,7 @@
+:root {
+    /* Overrides the border radius setting in the theme. */
+    --ck-border-radius: 6px;
+
+    /* Overrides the default font size in the theme. */
+    --ck-font-size-base: 13px;
+}

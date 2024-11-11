@@ -1,10 +1,10 @@
 APP_NAME=Laravel
 APP_ENV=local
-APP_KEY=base64:BnqFhPBz5mBhSKaCbcM6DGs60v1+MkQQu/tQTQubppw=
+APP_KEY=base64:amwBU33u3mlPuxiY6BBxTiLiJh5/pyMJ1xzuc8wJZp4=
 APP_DEBUG=true
 APP_URL=http://localhost:8000
 
-#ASSET_URL=../public
+ASSET_URL=/public
 
 LOG_CHANNEL=stack
 LOG_DEPRECATIONS_CHANNEL=null

@@ -2,14 +2,15 @@
 @section('title')
     <title>Editor</title>
 @endsection
+
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/welcome.css') }}">
     <link rel="stylesheet" href="{{ asset('css/ckeditor/demo.css') }}">
     <link rel="stylesheet" href="{{ asset('css/ckeditor/content.css') }}">
 @endsection
+
 @section('content')
 <sub class="test">
-
         <div class="title">
             <h2><span class="welcome">Welcome page</span></h2>
             <button class="save btn" id="save-btn">Save changes</button>
@@ -17,18 +18,14 @@
 <body>
         <div class="editor5">
             <div class ="cke5document">
-                {{-- <link rel="stylesheet" href="{{ asset('css/ckeditor/customdark.css') }}" type="text/css"> --}}
                 <link rel="stylesheet" href="{{ asset('css/ckeditor/customwhite.css') }}" type="text/css">
                 <textarea id="ckeditor" style="display:none"></textarea>
-                <!-- <textarea id="editor"></textarea> -->
-                <!-- <div id="editor"> -->
             </div>
         </div>
         
 </body>
 </sub>
 @endsection
-
 
 @section('script')
     
@@ -37,6 +34,7 @@
     {{-- @include('base.partials.ckeditor.testT') --}}
 
     <script>
+        
 	    var csrf = "{{ csrf_token() }}";
         var data = @json($content);
         var saveButton = document.getElementById('save-btn');
@@ -46,8 +44,7 @@
         .then(newEditor => {
             editor = newEditor
             newEditor.setData(data);
-            editor.setReadOnly( true);
-            
+            //editor.setReadOnly(true);
         });
         // ClassicEditor
         //     .create( document.querySelector( '#editor' ) )

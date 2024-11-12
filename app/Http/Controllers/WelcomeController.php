@@ -15,6 +15,7 @@ class WelcomeController extends Controller
             'tempActive' => false,
             'styleActive' => false,
             'welcomeActive' => true,
+            'fileActive' => false,
             'downloadActive' => false,
             'content' => $welcome->value,
             'darkTheme' => parent::getTheme(),

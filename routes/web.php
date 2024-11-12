@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\FilemanagerController;
 use App\Http\Controllers\LogoutController;
 
 use App\Http\Controllers\DashboardController;
@@ -61,6 +62,9 @@ Route::middleware('auth')->group(function (){
     Route::post('/styling/save/', [StyleController::class, 'saveData'])->name('savestyling');
     Route::get('/welcome/editor', [WelcomeController::class, 'index'])->name('welcome');
     Route::post('/welcome/editor/save/', [WelcomeController::class, 'save'])->name('saveWelcome');
+
+    Route::get('/filemanager', [FilemanagerController::class, 'index'])->name('filemanager');
+
 
     Route::get('/download', [ExportController::class, 'index'])->name('download');
 

@@ -18,6 +18,7 @@ class StyleController extends Controller
             'tempActive' => false,
             'styleActive' => true,
             'welcomeActive' => false,
+            'fileActive' => false,
             'downloadActive' => false,
             'darkTheme' => parent::getTheme(),
             'recents' => parent::getRecent(),

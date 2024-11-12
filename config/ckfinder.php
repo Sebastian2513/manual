@@ -95,19 +95,10 @@ $config['backends']['default'] = array(
 $config['defaultResourceTypes'] = '';
 
 $config['resourceTypes'][] = array(
-    'name'              => 'Files', // Single quotes not allowed.
-    'directory'         => 'files',
+    'name'              => 'file',
+    'directory'         => 'file',
     'maxSize'           => 0,
     'allowedExtensions' => '7z,aiff,asf,avi,bmp,csv,doc,docx,fla,flv,gif,gz,gzip,jpeg,jpg,mid,mov,mp3,mp4,mpc,mpeg,mpg,ods,odt,pdf,png,ppt,pptx,pxd,qt,ram,rar,rm,rmi,rmvb,rtf,sdc,sitd,swf,sxc,sxw,tar,tgz,tif,tiff,txt,vsd,wav,wma,wmv,xls,xlsx,zip',
-    'deniedExtensions'  => '',
-    'backend'           => 'default'
-);
-
-$config['resourceTypes'][] = array(
-    'name'              => 'Images',
-    'directory'         => 'images',
-    'maxSize'           => 0,
-    'allowedExtensions' => 'bmp,gif,jpeg,jpg,png',
     'deniedExtensions'  => '',
     'backend'           => 'default'
 );
@@ -165,7 +156,23 @@ $config['plugins'] = array();
 
 $config['cache'] = array(
     'imagePreview' => 24 * 3600,
-    'thumbnails'   => 24 * 3600 * 365
+    'thumbnails'   => 24 * 3600 * 365,
+    'proxyCommand' => 3600,  
+);
+
+/*================================ image settings =====================================*/
+// https://ckeditor.com/docs/ckfinder/ckfinder3-php/configuration.html#configuration_options_images
+
+$config['images'] = array(
+    'maxWidth'  => 1600,
+    'maxHeight' => 1200,
+    'quality'   => 80,
+    'sizes' => array(
+        'small'  => array('width' => 480, 'height' => 320, 'quality' => 80),
+        'medium' => array('width' => 600, 'height' => 480, 'quality' => 80),
+        'large'  => array('width' => 800, 'height' => 600, 'quality' => 80)
+    ),
+    'threshold' => array('pixels'=> 80, 'percent' => 10)
 );
 
 /*============================ Temp Directory settings ================================*/

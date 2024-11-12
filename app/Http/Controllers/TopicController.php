@@ -18,6 +18,7 @@ class TopicController extends Controller
             'tempActive' => false,
             'styleActive' => false,
             'welcomeActive' => false,
+            'fileActive' => false,
             'downloadActive' => false,
             'darkTheme' => parent::getTheme(),
             'topics' => $topics,

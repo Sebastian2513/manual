@@ -57,6 +57,10 @@
                     <span class="material-symbols-sharp">waving_hand</span>
                     <h3>Welcome page</h3>
                 </a>
+                <a href="{{ route('filemanager') }}" class="@if ($fileActive) active @endif">
+                    <span class="material-symbols-sharp">cloud_download</span>
+                    <h3>File Manager</h3>
+                </a>
                 <a href="{{ route('download') }}" class="@if ($downloadActive) active @endif">
                     <span class="material-symbols-sharp">cloud_download</span>
                     <h3>Download Html</h3>

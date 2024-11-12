@@ -15,6 +15,7 @@ class TemplateController extends Controller
             'tempActive'=> true,
             'styleActive'=> false,
             'welcomeActive' => false,
+            'fileActive' => false,
             'downloadActive'=> false,
             'templates' => $templates,
             'darkTheme' => parent::getTheme(),

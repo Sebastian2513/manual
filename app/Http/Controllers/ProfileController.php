@@ -17,6 +17,7 @@ class ProfileController extends Controller
             'tempActive' => false,
             'styleActive' => false,
             'welcomeActive' => false,
+            'fileActive' => false,
             'downloadActive' => false,
             'userData' => $userData,
             'darkTheme' => parent::getTheme(),
